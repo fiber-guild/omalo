@@ -18,7 +18,7 @@ const currentYear = new Date().getFullYear();
           href="https://www.instagram.com/omalo_fiber_guild/"
           target="_blank"
           rel="noreferrer"
-          class="inline-flex items-center gap-2 text-slate-600 transition hover:text-slate-900"
+          class="inline-flex items-center gap-2 text-slate-600 transition-opacity hover:opacity-60"
           aria-label="Instagram"
         >
           <svg

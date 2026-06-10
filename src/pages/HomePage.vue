@@ -80,7 +80,9 @@ const scrollToImage = () => {
           omalo fiber guild in coloboration with
           <a
             href="https://www.instagram.com/nateii_in_tusheti"
-            class="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline hover:text-gray-300 transition"
             >Nateii</a
           >
         </p>
@@ -113,7 +115,7 @@ const scrollToImage = () => {
 
     <section
       id="details"
-      class="mx-auto max-w-5xl px-4 py-10 sm:py-20 text-slate-900"
+      class="mx-auto max-w-5xl px-4 pt-10 sm:pt-20 text-slate-900"
     >
       <h2 class="mb-0 sm:mb-4 text-xl sm:text-2xl font-semibold">
         Event Details
@@ -124,7 +126,7 @@ const scrollToImage = () => {
           Vestomta — a place tourists rarely find —
           <button
             type="button"
-            class="inline-flex translate-y-1 items-center justify-center text-slate-700 transition hover:text-slate-600 cursor-pointer"
+            class="inline-flex items-center justify-center text-slate-700 transition hover:text-slate-600 cursor-pointer"
             @click="scrollToImage"
             aria-label="Scroll to image"
           >
@@ -137,7 +139,7 @@ const scrollToImage = () => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-6 w-6"
+              class="w-4 h-4 sm:h-6 sm:w-6"
               aria-hidden="true"
             >
               <path d="M12 5v14" />
@@ -221,7 +223,7 @@ const scrollToImage = () => {
     </section>
     <section
       id="image-section"
-      class="mx-auto max-w-5xl px-4 px-4 py-0 sm:py-20 text-slate-900 space-y-6"
+      class="mx-auto max-w-5xl px-4 px-4 pt-10 sm:pt-20 text-slate-900 space-y-6"
     >
       <h2 class="mb-0 sm:mb-4 text-xl sm:text-2xl font-semibold">About Us</h2>
       <div
@@ -248,7 +250,7 @@ const scrollToImage = () => {
         professional mountain guide, and the creator of
         <a
           class="underline text-gray-400 hover:text-gray-300 transition"
-          href="https://www.instagram.com/nateii_in_tusheti"
+          href="https://www.nateii.net/"
           target="_blank"
           >Nateii</a
         >. Having grown up among these peaks, she leads our explorations through
@@ -273,7 +275,7 @@ const scrollToImage = () => {
         Omalo, her work is closely integrated with the
         <a
           class="underline text-gray-400 hover:text-gray-400 transition"
-          href="https://www.instagram.com/aqtushetii_residency"
+          href="https://aqtushetii.com/"
           target="_blank"
           >AqTushetii residency</a
         >, where she works to bridge the gap between contemporary design and the
@@ -292,7 +294,7 @@ const scrollToImage = () => {
         Tushetian textiles, bridging the gap between historical linguistics and
         living craft.
       </p>
-      <p>
+      <p class="py-10">
         The group will be small and intimate. To book your spot or ask
         questions, send us on
         <a
@@ -301,7 +303,12 @@ const scrollToImage = () => {
           target="_blank"
           >instagram</a
         >
-        DM or mail omalofiberguild@gmail.com.
+        DM or write an email to
+        <a
+          href="mailto:omalofiberguild@gmail.com"
+          class="underline text-gray-400 hover:text-gray-400 transition"
+          >omalofiberguild@gmail.com</a
+        >.
       </p>
     </section>
   </Layout>
