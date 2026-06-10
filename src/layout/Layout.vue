@@ -7,6 +7,10 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  contrastTargetId: {
+    type: String,
+    default: "",
+  },
   containerClass: {
     type: String,
     default: "",
@@ -27,7 +31,7 @@ defineProps({
         : 'mx-auto min-h-screen max-w-5xl bg-white px-4 py-8 text-slate-900')
     "
   >
-    <Header :overlay="overlay" />
+    <Header :overlay="overlay" :contrast-target-id="contrastTargetId" />
 
     <main :class="mainClass">
       <slot />

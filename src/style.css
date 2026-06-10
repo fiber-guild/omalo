@@ -2,4 +2,9 @@
 
 body {
   margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
 }
