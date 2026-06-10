@@ -8,14 +8,14 @@ const heroPosterSrcSet = `${baseUrl}images/poster-768.webp 768w, ${baseUrl}image
 const heroLoaded = ref(false);
 
 // Section image paths
-const plantsSrc = `${baseUrl}images/sections/plants-800.jpg`;
-const plantsSrcSet = `${baseUrl}images/sections/plants-480.jpg 480w, ${baseUrl}images/sections/plants-800.jpg 800w, ${baseUrl}images/sections/plants-1200.jpg 1200w`;
+const plantsSrc = `${baseUrl}images/sections/plants-800.webp`;
+const plantsSrcSet = `${baseUrl}images/sections/plants-480.webp 480w, ${baseUrl}images/sections/plants-800.webp 800w, ${baseUrl}images/sections/plants-1200.webp 1200w`;
 
 const hikingSrc = `${baseUrl}images/sections/hiking-800.webp`;
 const hikingSrcSet = `${baseUrl}images/sections/hiking-480.webp 480w, ${baseUrl}images/sections/hiking-800.webp 800w, ${baseUrl}images/sections/hiking-1200.webp 1200w`;
 
-const weSrc = `${baseUrl}images/sections/we-800.jpg`;
-const weSrcSet = `${baseUrl}images/sections/we-480.jpg 480w, ${baseUrl}images/sections/we-800.jpg 800w, ${baseUrl}images/sections/we-1200.jpg 1200w`;
+const weSrc = `${baseUrl}images/sections/we-800.webp`;
+const weSrcSet = `${baseUrl}images/sections/we-480.webp 480w, ${baseUrl}images/sections/we-800.webp 800w, ${baseUrl}images/sections/we-1200.webp 1200w`;
 
 const onHeroLoad = () => {
   heroLoaded.value = true;
