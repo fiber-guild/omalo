@@ -5,6 +5,11 @@ const scrollToDetails = () => {
   const target = document.getElementById("details");
   target?.scrollIntoView({ behavior: "smooth" });
 };
+
+const scrollToImage = () => {
+  const target = document.getElementById("image-section");
+  target?.scrollIntoView({ behavior: "smooth" });
+};
 </script>
 
 <template>
@@ -56,11 +61,69 @@ const scrollToDetails = () => {
 
     <section id="details" class="mx-auto max-w-5xl px-4 py-20 text-slate-900">
       <h2 class="mb-4 text-2xl font-semibold">Event Details</h2>
-      <p class="max-w-2xl text-slate-700">
-        Join us in Tusheti / Vestomta for a week of natural dyeing, textile
-        practice, and mountain exploration. More program details can be added
-        here.
-      </p>
+      <div class="max-w-5xl text-slate-700 space-y-6">
+        <p class="text-5xl">
+          In Tusheti On the slopes of the Caucasus, in the remote village of
+          Vestomta — a place tourists rarely find —
+          <button
+            type="button"
+            class="inline-flex translate-y-1 items-center justify-center text-slate-700 transition hover:text-slate-600 cursor-pointer"
+            @click="scrollToImage"
+            aria-label="Scroll to image"
+          >
+            <span>three women</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
+              aria-hidden="true"
+            >
+              <path d="M12 5v14" />
+              <path d="m19 12-7 7-7-7" />
+            </svg></button
+          >, including a local Tush guide, are waiting for you to explore wild,
+          natural colors. Under the open sky, we will practice traditional
+          methods of dyeing local wool.
+        </p>
+        <p>
+          <strong>The Practice:</strong> Processing and dyeing wool with madder
+          root (Rubia tinctorum), indigo, turmeric, and mountain flowers.
+          Exploration: Daily hiking tours to neighboring villages.
+        </p>
+        <p><strong>Dates:</strong> August 6 – 12</p>
+        <p>
+          <strong>Transportation:</strong>Transport: Round-trip drive from
+          Tbilisi to Tusheti.
+        </p>
+        <p>
+          <strong>Stay:</strong> Accommodation in a traditional guesthouse in
+          Vestomta.
+        </p>
+
+        <p>
+          <strong>Price:</strong> €800 (includes transport, accommodation, and
+          all workshop materials).
+        </p>
+        <p>
+          The group will be small and intimate. To book your spot or ask
+          questions, send us a DM.
+        </p>
+      </div>
+    </section>
+    <section
+      id="image-section"
+      class="mx-auto max-w-5xl px-4 py-20 text-slate-900"
+    >
+      <h2 class="mb-4 text-2xl font-semibold">Tree Woman</h2>
+      <p>Natia Karkhilauri, Ani Gvelesiani, Tamara kalkhitashvili</p>
+      <div class="mx-auto max-w-2xl">
+        <img src="../assets/we.png" alt="" />
+      </div>
     </section>
   </Layout>
 </template>
