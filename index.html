@@ -18,6 +18,53 @@
 
     <link rel="canonical" href="https://fiber-guild.github.io/omalo/" />
 
+    <!-- Preload critical font files -->
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WRhbyTqsJwALTA.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/quicksand/v37/6xKtdSZaM9iE8KSgeHXUXsCvgKZ-.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Load fonts async to prevent render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    /></noscript>
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+    /></noscript>
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Omalo Fiber Guild" />
     <meta property="og:title" content="Alchemic Valleys | Omalo Fiber Guild" />
@@ -82,15 +129,6 @@
       }
     </script>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
     <title>Alchemic Valleys | Omalo Fiber Guild</title>
   </head>
   <body>
