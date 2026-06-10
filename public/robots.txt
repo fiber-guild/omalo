@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fiber-guild.github.io/omalo/sitemap.xml

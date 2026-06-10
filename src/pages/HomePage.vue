@@ -1,5 +1,25 @@
 <script setup>
+import { ref } from "vue";
 import Layout from "../layout/Layout.vue";
+
+const baseUrl = import.meta.env.BASE_URL;
+const heroPosterSrc = `${baseUrl}images/poster-1280.webp`;
+const heroPosterSrcSet = `${baseUrl}images/poster-768.webp 768w, ${baseUrl}images/poster-1280.webp 1280w, ${baseUrl}images/poster-1920.webp 1920w`;
+const heroLoaded = ref(false);
+
+// Section image paths
+const plantsSrc = `${baseUrl}images/sections/plants-800.jpg`;
+const plantsSrcSet = `${baseUrl}images/sections/plants-480.jpg 480w, ${baseUrl}images/sections/plants-800.jpg 800w, ${baseUrl}images/sections/plants-1200.jpg 1200w`;
+
+const hikingSrc = `${baseUrl}images/sections/hiking-800.webp`;
+const hikingSrcSet = `${baseUrl}images/sections/hiking-480.webp 480w, ${baseUrl}images/sections/hiking-800.webp 800w, ${baseUrl}images/sections/hiking-1200.webp 1200w`;
+
+const weSrc = `${baseUrl}images/sections/we-800.jpg`;
+const weSrcSet = `${baseUrl}images/sections/we-480.jpg 480w, ${baseUrl}images/sections/we-800.jpg 800w, ${baseUrl}images/sections/we-1200.jpg 1200w`;
+
+const onHeroLoad = () => {
+  heroLoaded.value = true;
+};
 
 const scrollToDetails = () => {
   const target = document.getElementById("details");
@@ -18,11 +38,23 @@ const scrollToImage = () => {
     contrast-target-id="hero-contrast-sentinel"
     container-class="relative min-h-screen w-full"
   >
-    <section id="hero-section" class="relative h-dvh w-full overflow-hidden">
+    <section
+      id="hero-section"
+      class="relative h-dvh w-full overflow-hidden bg-slate-900"
+    >
       <img
-        src="/poster.jpg"
+        :src="heroPosterSrc"
+        :srcset="heroPosterSrcSet"
+        sizes="100vw"
         alt="Alchemic Valleys Exploration & Natural Dyeing poster"
-        class="absolute inset-0 h-full w-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        @load="onHeroLoad"
+        :class="[
+          'absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out',
+          heroLoaded ? 'opacity-100' : 'opacity-0',
+        ]"
       />
 
       <div
@@ -32,18 +64,22 @@ const scrollToImage = () => {
       />
 
       <div
-        class="relative z-10 flex h-full flex-col justify-between bg-black/35 p-6 sm:p-10"
+        :class="[
+          'relative z-10 flex h-full flex-col justify-between bg-black/35 p-6 transition-opacity duration-700 ease-out sm:p-10',
+          heroLoaded ? 'opacity-100' : 'opacity-0',
+        ]"
       >
         <h1
           class="mb-3 max-w-5xl pt-20 text-3xl leading-tight tracking-tight text-[#ededed] drop-shadow-[0_3px_14px_rgba(0,0,0,0.65)] sm:text-5xl"
         >
-          <span class="uppercase font-bold">Alchemic Valleys</span>
-          <br />Exploration & Natural Dyeing <br />in vestomta
+          <span class="uppercase font-bold">Alchemic Valleys</span><br />
+          <span class="text-2xl sm:text-5xl">Exploration & Natural Dyeing</span>
+          <br /><span class="text-2xl sm:text-5xl">in Vestomta</span>
         </h1>
-        <p class="text-white/90">
+        <p class="text-white/90 hidden xl:block">
           omalo fiber guild in coloboration with
           <a
-            href="https://www.instagram.com/omalo.fiber.guild/"
+            href="https://www.instagram.com/nateii_in_tusheti"
             class="underline"
             >Nateii</a
           >
@@ -52,27 +88,38 @@ const scrollToImage = () => {
 
       <button
         type="button"
-        class="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 text-center text-white"
+        :class="[
+          'absolute bottom-2 left-1/2 z-20 -translate-x-1/2 text-center text-white transition-opacity duration-700 ease-out',
+          heroLoaded ? 'opacity-100' : 'opacity-0',
+        ]"
         @click="scrollToDetails"
         aria-label="Scroll to details"
       >
         <span
-          class="mb-2 block text-sm uppercase tracking-[0.2em] text-white/90 text-md"
+          class="block text-sm uppercase tracking-[0.2em] text-white/90 text-md"
         >
-          6 - 12 August <br />Tusheti / Vestomta.
+          <span class="text-nowrap">6 - 12 August</span> <br /><span
+            class="text-nowrap"
+            >Tusheti / Vestomta.</span
+          >
         </span>
         <span
-          class="inline-flex h-12 w-12 items-center justify-center text-2xl leading-none transition hover:bg-black/50"
+          class="inline-flex h-12 w-12 items-center justify-center text-2xl leading-none transition cursor-pointer text-white/90"
         >
           ↓
         </span>
       </button>
     </section>
 
-    <section id="details" class="mx-auto max-w-5xl px-4 py-20 text-slate-900">
-      <h2 class="mb-4 text-2xl font-semibold">Event Details</h2>
-      <div class="max-w-5xl text-slate800 space-y-6">
-        <p class="text-4xl z-10 relative">
+    <section
+      id="details"
+      class="mx-auto max-w-5xl px-4 py-10 sm:py-20 text-slate-900"
+    >
+      <h2 class="mb-0 sm:mb-4 text-xl sm:text-2xl font-semibold">
+        Event Details
+      </h2>
+      <div class="max-w-5xl text-slate-800 space-y-6">
+        <p class="text-2xl sm:text-4xl z-10 relative tracking-tight">
           In Tusheti On the slopes of the Caucasus, in the remote village of
           Vestomta — a place tourists rarely find —
           <button
@@ -104,17 +151,36 @@ const scrollToImage = () => {
           <img src="../assets/vestomta.png" alt="Vestomta village" />
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.4630873660956!2d45.523127317144464!3d42.37880458215024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40459c53ce5b8b2b%3A0xf08bbbdc9cc27091!2sVestomta!5e1!3m2!1sen!2sge!4v1781110566868!5m2!1sen!2sge" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div> -->
-        <div class="max-w-2xl mx-auto -mt-8">
-          <img src="../assets/plants.jpg" alt="" srcset="" />
+        <div class="max-w-2xl mx-auto -mt-6 sm:-mt-8">
+          <img
+            :src="plantsSrc"
+            :srcset="plantsSrcSet"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 672px"
+            alt="Natural dye plants used during the workshop"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <p class="text-4xl -mt-10 relative z-10">
+        <p
+          class="relative z-10 -mt-6 sm:-mt-10 font-montserrat tracking-tight text-2xl sm:text-4xl"
+        >
           <strong>The Practice:</strong> Processing and dyeing wool with madder
           root (Rubia tinctorum), indigo, turmeric, and mountain flowers.
         </p>
-        <div class="max-w-2xl mx-auto -mt-8">
-          <img class="w-full" src="../assets/hiking.webp" alt="" srcset="" />
+        <div class="max-w-2xl mx-auto -mt-6 sm:-mt-8">
+          <img
+            class="w-full"
+            :src="hikingSrc"
+            :srcset="hikingSrcSet"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 672px"
+            alt="Hiking trail in Tusheti"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <p class="text-4xl -mt-10">
+        <p
+          class="-mt-6 sm:-mt-10 font-montserrat tracking-tight text-2xl sm:text-4xl"
+        >
           <strong>Exploration:</strong> Daily hiking tours to neighboring
           villages.
         </p>
@@ -151,27 +217,15 @@ const scrollToImage = () => {
           <strong>Price:</strong> €800 (includes transport, accommodation, and
           all workshop materials).
         </p>
-        <!-- <p>
-          The group will be small and intimate. To book your spot or ask
-          questions, send us a DM.
-        </p> -->
       </div>
     </section>
     <section
       id="image-section"
-      class="mx-auto max-w-5xl px-4 py-20 text-slate-900 space-y-6"
+      class="mx-auto max-w-5xl px-4 px-4 py-0 sm:py-20 text-slate-900 space-y-6"
     >
-      <h2 class="mb-4 text-2xl font-semibold">About Us</h2>
-      <!-- <p>
-        Natia is a Tusheti native, professional mountain guide, and the creator
-        of Nateii. Having grown up among these peaks, she leads our explorations
-        through the Vestomta valley with an intimate knowledge of its hidden
-        trails and history. She offers a truly unique perspective on the
-        valley—combining the physical journey of the trek with the ancient
-        knowledge of the land’s natural colors.
-      </p> -->
+      <h2 class="mb-0 sm:mb-4 text-xl sm:text-2xl font-semibold">About Us</h2>
       <div
-        class="text-rxl text-4xl relative z-10 font-montserrat tracking-tight"
+        class="font-montserrat tracking-tight text-2xl sm:text-4xl z-10 relative tracking-tight"
       >
         Our work in the Vestomta valley is a collaboration rooted in a shared
         passion for the Tushetian landscape and its ancient wool traditions. By
@@ -180,7 +234,14 @@ const scrollToImage = () => {
         high Caucasus.
       </div>
       <div class="mx-auto max-w-2xl -mt-8">
-        <img src="../assets/we.png" alt="" />
+        <img
+          :src="weSrc"
+          :srcset="weSrcSet"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 672px"
+          alt="Omalo Fiber Guild collaborators"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <p>
         <strong>Natia </strong> [Natia Karkhilarui] is a Tusheti native,
@@ -238,7 +299,7 @@ const scrollToImage = () => {
           class="underline text-gray-400 hover:text-gray-400 transition"
           href="https://www.instagram.com/omalo_fiber_guild/"
           target="_blank"
-          >istagram</a
+          >instagram</a
         >
         DM or mail omalofiberguild@gmail.com.
       </p>
