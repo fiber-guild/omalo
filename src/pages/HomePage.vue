@@ -122,8 +122,8 @@ const scrollToImage = () => {
       </h2>
       <div class="max-w-5xl text-slate-800 space-y-6">
         <p class="text-2xl sm:text-4xl z-10 relative tracking-tight">
-          In Tusheti On the slopes of the Caucasus, in the remote village of
-          Vestomta — a place tourists rarely find —
+          On the slopes of the Caucasus, in the remote village of Vestomta, a
+          place tourists rarely find,
           <button
             type="button"
             class="inline-flex items-center justify-center text-slate-700 transition hover:text-slate-600 cursor-pointer"
@@ -229,11 +229,11 @@ const scrollToImage = () => {
       <div
         class="font-montserrat tracking-tight text-2xl sm:text-4xl z-10 relative tracking-tight"
       >
-        Our work in the Vestomta valley is a collaboration rooted in a shared
-        passion for the Tushetian landscape and its ancient wool traditions. By
-        combining mountain exploration, academic research, and contemporary
-        design, we strive to document and preserve the living heritage of the
-        high Caucasus.
+        Our work in the Vestomta valley grew out of a shared love for this
+        landscape and its wool traditions. Each of us brings something
+        different: mountain guiding, design, academic research. Together we try
+        to document the old craft knowledge of the high Caucasus and revive the
+        life cycle of Tusheti wool.
       </div>
       <div class="mx-auto max-w-2xl -mt-8">
         <img
@@ -246,18 +246,16 @@ const scrollToImage = () => {
         />
       </div>
       <p>
-        <strong>Natia </strong> [Natia Karkhilarui] is a Tusheti native,
-        professional mountain guide, and the creator of
+        <strong>Natia </strong> [Natia Karkhilarui] grew up in Tusheti and works
+        as a professional mountain guide. She is the creator of
         <a
           class="underline text-gray-400 hover:text-gray-300 transition"
           href="https://www.nateii.net/"
           target="_blank"
           >Nateii</a
-        >. Having grown up among these peaks, she leads our explorations through
-        the Vestomta valley with an intimate knowledge of its hidden trails and
-        history. She offers a truly unique perspective on the valley—combining
-        the physical journey of the trek with the ancient knowledge of the
-        land’s natural colors. Follow her journey:
+        >. She has known the valley's trails and stories since childhood, and on
+        our walks the trek and the land's natural colors become part of the same
+        lesson. Follow her at:
         <a
           class="underline text-gray-400 hover:text-gray-400 transition"
           href="https://www.instagram.com/nateii_in_tusheti"
@@ -283,16 +281,14 @@ const scrollToImage = () => {
       </p>
 
       <p>
-        <strong>Tamara</strong> [Tamara kalkhitashvili] is a researcher,
-        professor of Digital Humanities at Ilia State University, and an
-        advanced practitioner of natural dyeing. For the past five years, she
-        has worked alongside Anna as an assistant to master artisan Nanalo
-        Azikuri, specializing in the complex chemistry and history of botanical
-        colors. A PhD in Philology, Tamara’s academic work—including research
-        for the State Silk Museum and the digital preservation of Georgian
-        heritage—allows her to decode the cultural semantics and "language" of
-        Tushetian textiles, bridging the gap between historical linguistics and
-        living craft.
+        <strong>Tamara</strong> [Tamara kalkhitashvili] is a researcher and
+        professor of Digital Humanities at Ilia State University, and a longtime
+        practitioner of natural dyeing. For the past five years she has worked
+        alongside Ani as an assistant to Nanalo Azikuri, drawn especially to the
+        chemistry and history of botanical colors. She holds a PhD in Philology,
+        and her academic work, from research for the State Silk Museum to the
+        digital preservation of Georgian heritage, lets her read Tushetian
+        textiles as a language of their own.
       </p>
       <p class="py-10">
         The group will be small and intimate. To book your spot or ask
